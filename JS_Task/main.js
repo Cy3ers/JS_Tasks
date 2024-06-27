@@ -1,8 +1,8 @@
 // Problem: Analyzing a Sentence
 //-----------------------------------------------------------------------
 
-sen = "The quick brown fox jumps over the lazy dog"
-sen_arr = sen.split(" ");
+const sen = "The quick brown fox jumps over the lazy dog"
+const sen_arr = sen.split(" ");
 
 const word_count = (sen_arr) => {
     return sen_arr.length;
@@ -12,21 +12,27 @@ console.log(`The sentence has ${word_count(sen_arr)} words.`);
 
 //-----------------------------------------------------------------------
 
-const longest_word = (sen_arr) => {
-    const len = [];
-    for (let word of sen_arr) {
-        len.push(word.length);
-    }
+// const longest_word = (sen_arr) => {
+//     const len = [];
+//     for (let word of sen_arr) {
+//         len.push(word.length);
+//     }
 
-    return sen_arr[len.indexOf(Math.max(...len))];
+//     return sen_arr[len.indexOf(Math.max(...len))];
+// }
+
+const longest_word = (sen_arr) => {
+    return sen_arr.reduce((longest, currentWord) => {
+        return currentWord.length > longest.length ? currentWord : longest;
+    }, '');
 }
 
 console.log(`The longest word is "${longest_word(sen_arr)}".`);
 
 //-----------------------------------------------------------------------
 
-let word1 = "fox"
-let word2 = "cat"
+const word1 = "fox"
+const word2 = "cat"
 console.log(`${sen.replace(word1, word2)}`)
 
 //-----------------------------------------------------------------------
@@ -41,7 +47,7 @@ console.log(str_reverse(sen_arr));
 //-----------------------------------------------------------------------
 
 const Capitilise = (arr) => {
-    cap_sen = [];
+    const cap_sen = [];
     for (let word of arr) {
         cap_sen.push(word[0].toUpperCase() + word.slice(1));
     }
@@ -106,7 +112,7 @@ console.log(books);
 //-----------------------------------------------------------------------
 
 const updateGenre = (books, title, newGenre) => {
-    toUpdate = books.findIndex((book) => book.title === title);
+    const toUpdate = books.findIndex((book) => book.title === title);
     books[toUpdate].genre = newGenre;
 }
 updateGenre(books, "Test", "New Genre Test");
@@ -145,7 +151,7 @@ const highestGrades = students.map((student) => {
     return high;
 })
 
-let highestGrade = highestGrades.reduce((a, b) => Math.max(a, b), -Infinity);
+const highestGrade = highestGrades.reduce((a, b) => Math.max(a, b), -Infinity);
 
 console.log(highestGrade);
 
