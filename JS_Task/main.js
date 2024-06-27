@@ -2,32 +2,32 @@
 //-----------------------------------------------------------------------
 
 const sen = "The quick brown fox jumps over the lazy dog"
-const sen_arr = sen.split(" ");
+const senArr = sen.split(" ");
 
-const word_count = (sen_arr) => {
-    return sen_arr.length;
+const wordCount = (senArr) => {
+    return senArr.length;
 }
 
-console.log(`The sentence has ${word_count(sen_arr)} words.`);
+console.log(`The sentence has ${wordCount(senArr)} words.`);
 
 //-----------------------------------------------------------------------
 
-// const longest_word = (sen_arr) => {
+// const longest_word = (senArr) => {
 //     const len = [];
-//     for (let word of sen_arr) {
+//     for (let word of senArr) {
 //         len.push(word.length);
 //     }
 
-//     return sen_arr[len.indexOf(Math.max(...len))];
+//     return senArr[len.indexOf(Math.max(...len))];
 // }
 
-const longest_word = (sen_arr) => {
-    return sen_arr.reduce((longest, currentWord) => {
+const longestWord = (senArr) => {
+    return senArr.reduce((longest, currentWord) => {
         return currentWord.length > longest.length ? currentWord : longest;
     }, '');
 }
 
-console.log(`The longest word is "${longest_word(sen_arr)}".`);
+console.log(`The longest word is "${longestWord(senArr)}".`);
 
 //-----------------------------------------------------------------------
 
@@ -37,16 +37,16 @@ console.log(`${sen.replace(word1, word2)}`)
 
 //-----------------------------------------------------------------------
 
-const str_reverse = (arr) => {
+const strReverse = (arr) => {
     const reversed = arr.toReversed();
     return reversed.join(' ');
 }
 
-console.log(str_reverse(sen_arr));
+console.log(strReverse(senArr));
 
 //-----------------------------------------------------------------------
 
-const Capitilise = (arr) => {
+const capitalise = (arr) => {
     const cap_sen = [];
     for (let word of arr) {
         cap_sen.push(word[0].toUpperCase() + word.slice(1));
@@ -55,7 +55,7 @@ const Capitilise = (arr) => {
     return cap_sen.join(' ');
 }
 
-console.log(Capitilise(sen_arr));
+console.log(capitalise(senArr));
 
 //-----------------------------------------------------------------------
 
@@ -87,9 +87,9 @@ console.log(books);
 
 //-----------------------------------------------------------------------
 
-const removetitle = "Harry Potter"
+const removeTitle = "Harry Potter"
   
-books.splice(books.findIndex(a => a.title === removetitle) , 1)
+books.splice(books.findIndex(a => a.title === removeTitle) , 1)
 
 console.log(books);
 
@@ -103,11 +103,11 @@ console.log(findByAuthor(books, "Jane Austen"));
 
 //-----------------------------------------------------------------------
 
-const listbooks = (books) => {
+const listBooks = (books) => {
     return books;
 }
 
-console.log(books);
+console.log(listBooks(books));
 
 //-----------------------------------------------------------------------
 
