@@ -183,3 +183,11 @@ avgGrade.forEach(function (arrayItem) {
     var x = `Name:\t\tAvg. Grade:\n${arrayItem.name}\t\t${arrayItem.gradeavg}`;
     console.log(x);
 });
+
+//-----------------------------------------------------------------------
+
+const arr = ["One", "One", "Two", "Three", "Two"];
+
+x = new Set(arr);
+
+console.log(x);
